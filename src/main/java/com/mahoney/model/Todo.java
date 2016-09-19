@@ -1,6 +1,8 @@
 package com.mahoney.model;
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -58,6 +60,7 @@ public class Todo {
     }
 
     public void setCreateDate(Date createDate) {
+
         this.createDate = createDate;
     }
 

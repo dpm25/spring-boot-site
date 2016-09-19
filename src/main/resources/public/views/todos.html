@@ -5,13 +5,21 @@
           <td><h3>All Todos</h3></td>
           <td></td>
       </tr>
+      <tr>
+          <th>Title</th>
+          <th>Note</th>
+          <th>Create Date</th>
+          <th>Due Date</th>
+          <th>Complete</th>
+      </tr>
       <tr ng-repeat="todo in todos">
           <!-- Todo atttribute -->
           <td>{{todo.title}}</td>
           <td>{{todo.note}}</td>
-          <td>{{todo.createDate}}</td>
-          <td>{{todo.dueDate}}</td>
-          <td>{{todo.complete}}</td>
+          <td>{{todo.createDate | date : format : timezone}}</td>
+          <td>{{todo.dueDate | date : format : timezone}}</td>
+          <td ng-if="todo.complete">TRUE</td>
+          <td ng-if="!todo.complete">FALSE</td>
           <td>
               <a class="btn btn-primary" ui-sref="viewTodo({id:todo.id})">View</a>
               <a class="btn btn-danger"  ng-click="deleteTodo(todo)">Delete</a>

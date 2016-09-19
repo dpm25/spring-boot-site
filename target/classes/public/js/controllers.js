@@ -11,6 +11,7 @@ angular.module('app.controllers', []).controller('TodoListController', function(
   };
 }).controller('TodoViewController', function($scope, $stateParams, Todo) {
   $scope.todo = Todo.get({ id: $stateParams.id }); //Get a single todo.Issues a GET to /api/v1/todos/:id
+
 }).controller('TodoCreateController', function($scope, $state, $stateParams, Todo) {
   $scope.todo = new Todo();  //create new instance. Properties will be set via ng-model on UI
 
