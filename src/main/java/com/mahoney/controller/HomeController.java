@@ -8,6 +8,6 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home() {
-        return "Welcome to Dan Mahoney's page!";
+        return "redirect:index.html";
     }
 }

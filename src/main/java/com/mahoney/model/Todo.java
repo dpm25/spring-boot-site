@@ -1,23 +1,40 @@
 package com.mahoney.model;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "todo")
 public class Todo {
 
-    private String title;
-    private String note;
-    private Date createDate;
-    private Date dueDate;
-    private boolean complete;
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
+    String title;
+    String note;
+    Date createDate;
+    Date dueDate;
+    boolean complete;
 
-    public Todo(String title, String note, Date createDate, Date dueDate, boolean complete) {
+    public Todo() {
+    }
+
+    public Todo(Long id, String title, String note, Date createDate, Date dueDate, boolean complete) {
+        this.id = id;
         this.title = title;
         this.note = note;
         this.createDate = createDate;
         this.dueDate = dueDate;
         this.complete = complete;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
