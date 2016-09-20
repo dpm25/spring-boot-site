@@ -4,8 +4,6 @@ import com.mahoney.model.Todo;
 import com.mahoney.repository.TodoRespository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -24,7 +22,7 @@ public class TodoController {
     }
 
     @RequestMapping(value = "todos", method = RequestMethod.POST)
-    public Todo create(@RequestBody Todo todo ) {
+    public Todo create(@RequestBody Todo todo) {
         todo.setComplete(false);
         todo.setCreateDate(new Date());
         return todoRespository.saveAndFlush(todo);
@@ -44,7 +42,7 @@ public class TodoController {
     }
 
     @RequestMapping(value = "todos/{id}", method = RequestMethod.DELETE)
-    public Todo delete(@RequestBody Long id) {
+    public Todo delete(@PathVariable Long id) {
         Todo existingTodo = todoRespository.findOne(id);
         todoRespository.delete(existingTodo);
         return existingTodo;

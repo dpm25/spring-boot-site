@@ -1,6 +1,6 @@
 <div class="container pad-top">
   <a ui-sref="newTodo" class="btn-primary btn-lg nodecoration">Add New Todo</a>
-  <table class="table todotable">
+  <table class="table todotable" style="table-layout: fixed">
       <tr>
           <td><h3>All Todos</h3></td>
           <td></td>
@@ -11,15 +11,15 @@
           <th>Create Date</th>
           <th>Due Date</th>
           <th>Complete</th>
+          <th></th>
       </tr>
       <tr ng-repeat="todo in todos">
-          <!-- Todo atttribute -->
           <td>{{todo.title}}</td>
           <td>{{todo.note}}</td>
           <td>{{todo.createDate | date : format : timezone}}</td>
           <td>{{todo.dueDate | date : format : timezone}}</td>
-          <td ng-if="todo.complete">TRUE</td>
-          <td ng-if="!todo.complete">FALSE</td>
+          <td ng-if="todo.complete"><i class="fa fa-check-square fa-2x"></i></td>
+          <td ng-if="!todo.complete"><i class="fa fa-exclamation fa-2x"></i></td>
           <td>
               <a class="btn btn-primary" ui-sref="viewTodo({id:todo.id})">View</a>
               <a class="btn btn-danger"  ng-click="deleteTodo(todo)">Delete</a>

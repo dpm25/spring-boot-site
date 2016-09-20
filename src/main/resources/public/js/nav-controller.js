@@ -17,10 +17,6 @@ angular.module('navController', [])
 			{
 				name: 'Todos',
 				url: '#/todos'
-			},
-			{
-				name: 'Resume',
-				url: '#/resume'
 			}
 		]
 	});
