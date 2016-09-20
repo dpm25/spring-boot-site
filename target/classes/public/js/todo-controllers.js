@@ -1,4 +1,4 @@
-angular.module('app.controllers', []).controller('TodoListController', function ($scope, $state, popupService, $window, Todo) {
+angular.module('app.todoControllers', []).controller('TodoListController', function ($scope, $state, popupService, $window, Todo) {
     $scope.todos = Todo.query(); //fetch all. Issues a GET to /api/vi/todos
 
     $scope.deleteTodo = function(todo) { // Delete a instance. Issues a DELETE to /api/v1/shipwrecks/:id

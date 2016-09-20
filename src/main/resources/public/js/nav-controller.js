@@ -1,4 +1,4 @@
-angular.module('navController', [])
+angular.module('app.navController', [])
 	.controller('nav', function($scope, $state) {
 		$scope.title = 'Home';
 
@@ -15,8 +15,12 @@ angular.module('navController', [])
 				url: '#/'
 			},
 			{
-				name: 'Todos',
+				name: 'Todo List',
 				url: '#/todos'
+			},
+			{
+				name: 'Resume',
+				url: '#/resume'
 			}
 		]
 	});

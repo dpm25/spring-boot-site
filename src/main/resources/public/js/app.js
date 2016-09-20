@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('app', ['ui.router', 'navController', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'app.controllers', 'app.services'])
+    var app = angular.module('app', ['ui.router', 'app.navController', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'app.todoControllers', 'app.resumeController', 'app.services'])
 
     // define for requirejs loaded modules
     define('app', [], function () {
@@ -27,8 +27,8 @@
     }
 
     app.config(function ($stateProvider, $urlRouterProvider, $controllerProvider) {
-        var origController = app.controller
-        app.controller = function (name, constructor) {
+        var origController = app.todoControllers;
+        app.todoControllers = function (name, constructor) {
             $controllerProvider.register(name, constructor);
             return origController.apply(this, arguments);
         }
@@ -36,7 +36,7 @@
         var viewsPrefix = 'views/';
 
         // For any unmatched url, send to /
-        $urlRouterProvider.otherwise("/")
+        $urlRouterProvider.otherwise("/");
 
         $stateProvider
         // you can set this to no template if you just want to use the html in the page
@@ -62,6 +62,10 @@
             url: '/todos/:id/edit',
             templateUrl: viewsPrefix + 'todo-edit.html',
             controller: 'TodoEditController'
+        }).state('resume', {
+            url: '/resume',
+            templateUrl: viewsPrefix + 'resume.html',
+            controller: 'ResumeDisplayController'
         })
     })
         .directive('updateTitle', ['$rootScope', '$timeout',
