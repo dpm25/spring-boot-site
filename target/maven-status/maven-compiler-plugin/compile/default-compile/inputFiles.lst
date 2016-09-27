@@ -1,6 +1,8 @@
 /Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/controller/TodoController.java
 /Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/controller/HomeController.java
+/Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/controller/ResumeController.java
 /Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/App.java
 /Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/config/PersistanceConfiguration.java
 /Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/repository/TodoRespository.java
+/Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/model/ContactInfo.java
 /Users/dmahoney/Documents/general/my-site/src/main/java/com/mahoney/model/Todo.java

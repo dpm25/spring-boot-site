@@ -1,6 +1,8 @@
+com/mahoney/model/ContactInfo.class
 com/mahoney/App.class
 com/mahoney/controller/TodoController.class
 com/mahoney/repository/TodoRespository.class
 com/mahoney/controller/HomeController.class
+com/mahoney/controller/ResumeController.class
 com/mahoney/model/Todo.class
 com/mahoney/config/PersistanceConfiguration.class
