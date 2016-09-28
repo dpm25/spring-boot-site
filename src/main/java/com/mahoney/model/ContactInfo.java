@@ -1,16 +1,33 @@
 package com.mahoney.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "contacts")
 public class ContactInfo {
 
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
     String name;
     String email;
 
     public ContactInfo() {
     }
 
-    public ContactInfo(String name, String email) {
+    public ContactInfo(Long id, String name, String email) {
+        this.id = id;
         this.name = name;
         this.email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -1,8 +1,5 @@
 angular.module('app.resumeController', [])
-    .controller('ResumeDisplayController', ['$scope', '$http', function ($scope, $http) {
-
-        console.log(">>>>>>>>>>>>>>> RESUME CONTROLLER");
-
+    .controller('ResumeDisplayController', ['$scope', '$http', '$state', function ($scope, $http, $state) {
 
         $scope.submitInfo = function () {
             // use $.param jQuery function to serialize data from JSON
@@ -13,14 +10,14 @@ angular.module('app.resumeController', [])
 
             var config = {
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                    'Content-Type': 'application/json'
                 }
             }
 
             $http.post('/my-site/api/v1/resume/submit', data, config)
-                .success(function (data, status, headers, config) {
+                .success(function (data, status, headers) {
                     $scope.PostDataResponse = data;
+                    $state.go('resume');
                 })
                 .error(function (data, status, header, config) {
                     $scope.ResponseDetails = "Data: " + data +
